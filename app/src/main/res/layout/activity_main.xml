@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#CCEFA3"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="70dp"
+        android:fontFamily="@font/alfa_slab_one"
+        android:rotationX="39"
+        android:shadowColor="#CBCF12F1"
+        android:shadowRadius="35"
+        android:text="LILAS"
+        android:textColor="#9C27B0"
+        android:textIsSelectable="false"
+        android:textSize="60sp" />
+    <!--android:layout_marginBottom="50dp"-->
+
+    <TextView
+        android:id="@+id/textVieww"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="50dp"
+        android:fontFamily="@font/alfa_slab_one"
+        android:rotationX="39"
+        android:shadowColor="#CBCF12F1"
+        android:shadowRadius="35"
+        android:text="HOUSE"
+        android:textColor="#9C27B0"
+        android:textIsSelectable="false"
+        android:textSize="60sp" />
+    <!--android:layout_marginTop="50dp"-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#CCEFA3"
+        android:orientation="vertical">
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="20dp"
+            android:textColorHint="#9C27B0">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input_user"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_edit_text"
+                android:fontFamily="@font/alfa_slab_one"
+                android:hint="User" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="#9C27B0">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_edit_text"
+                android:fontFamily="@font/alfa_slab_one"
+                android:hint="Senha" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/button_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="20dp"
+            android:backgroundTint="#9C27B0"
+            android:fontFamily="@font/alfa_slab_one"
+            android:text="Entrar"
+            android:textColor="@color/white"
+            android:textColorLink="#0F071E" />
+    </LinearLayout>
+
+</LinearLayout>

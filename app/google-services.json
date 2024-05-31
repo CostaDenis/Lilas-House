@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "916150916819",
+    "project_id": "lilas-house",
+    "storage_bucket": "lilas-house.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:916150916819:android:5c8fff07983a50384de626",
+        "android_client_info": {
+          "package_name": "com.example.lilashouse"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmvwxgjGsIFZjZyUASp-mkyQC-ZeYfiRg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
