@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">Lilas House</string>
+
+    <!-- EditText -->
+    <string name="EditTextHint_User">Email</string>
+    <string name="EditTextHint_Password">Senha</string>
+
+    <!-- TextView -->
+    <string name="logo_name_Lilas">LILAS</string>
+    <string name="logo_name_House">HOUSE</string>
+    <string name="TextView_Cadastrar">Cadastrar</string>
+    <string name="TextView_EsqueciSenha">Esqueci a senha</string>
+    <string name="TextView_RedefinirSenha">Redefinir senha</string>
+    <string name="TextView_InsiraEmail">Insira o email da sua conta</string>
+
+    <!-- Button -->
+    <string name="Button_Entrar">Entrar</string>
+    <string name="Button_EnviarEmail">Enviar Email de confirmação</string>
 </resources>

@@ -1,20 +1,24 @@
 package com.example.lilashouse
 
+import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.google.firebase.Firebase
+import androidx.core.content.ContextCompat
+import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.firestore
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var inputUser: EditText
     private lateinit var inputPassword: EditText
     private lateinit var loginButton: Button
+    private lateinit var abrirEsqueciSenha: TextView
     private lateinit var auth: FirebaseAuth
     private lateinit var firestore: FirebaseFirestore
 
@@ -25,6 +29,7 @@ class MainActivity : AppCompatActivity() {
         inputUser = findViewById(R.id.input_user)
         inputPassword = findViewById(R.id.input_password)
         loginButton = findViewById(R.id.button_login)
+        abrirEsqueciSenha = findViewById(R.id.textView_esqueci_senha)
 
         auth = FirebaseAuth.getInstance()
         firestore = FirebaseFirestore.getInstance()
@@ -33,19 +38,32 @@ class MainActivity : AppCompatActivity() {
 
             val username = inputUser.text.toString()
             val password = inputPassword.text.toString()
+
             if (username.isNotEmpty() && password.isNotEmpty()) {
                 auth.signInWithEmailAndPassword(username, password)
                     .addOnCompleteListener(this) { task ->
                         if (task.isSuccessful) {
-                            showToast("Login realizado com sucesso")
+                            val backgroundColorLogin = ContextCompat.getColor(this, R.color.VerdeLogin)
+                            val snackbar_Sucesso = Snackbar.make(it, "Login realizado com sucesso", Snackbar.LENGTH_SHORT)
+                            snackbar_Sucesso.setBackgroundTint(backgroundColorLogin)
+                            snackbar_Sucesso.show()
                         } else {
-                            showToast("Usuário ou senha incorretos")
+                            val snackbar_Incorreto = Snackbar.make(it, "Usuário ou senha incorretos", Snackbar.LENGTH_SHORT)
+                            snackbar_Incorreto.setBackgroundTint(Color.GRAY)
+                            snackbar_Incorreto.show()
                         }
                     }
             } else {
-                showToast("Por favor, preencha todos os campos")
+                val snackbar_Erro = Snackbar.make(it, "Por favor, preencha todos os campos", Snackbar.LENGTH_SHORT)
+                snackbar_Erro.setBackgroundTint(Color.RED)
+                snackbar_Erro.show()
             }
         }
+        abrirEsqueciSenha.setOnClickListener {
+            val intent = Intent(this, EsqueciSenha::class.java)
+            startActivity(intent)
+        }
+
     }
     public override fun onStart() {
         super.onStart()
@@ -56,4 +74,5 @@ class MainActivity : AppCompatActivity() {
     private fun showToast(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
+
 }

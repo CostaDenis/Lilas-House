@@ -5,12 +5,12 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#CCEFA3"
+    android:background="#8BC34A"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textview_lilas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -19,14 +19,14 @@
         android:rotationX="39"
         android:shadowColor="#CBCF12F1"
         android:shadowRadius="35"
-        android:text="LILAS"
+        android:text="@string/logo_name_Lilas"
         android:textColor="#9C27B0"
         android:textIsSelectable="false"
         android:textSize="60sp" />
     <!--android:layout_marginBottom="50dp"-->
 
     <TextView
-        android:id="@+id/textVieww"
+        android:id="@+id/textview_house"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -35,7 +35,7 @@
         android:rotationX="39"
         android:shadowColor="#CBCF12F1"
         android:shadowRadius="35"
-        android:text="HOUSE"
+        android:text="@string/logo_name_House"
         android:textColor="#9C27B0"
         android:textIsSelectable="false"
         android:textSize="60sp" />
@@ -44,12 +44,12 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#CCEFA3"
+        android:background="#8BC34A"
         android:orientation="vertical">
 
 
         <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
+            android:layout_width="400dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
             android:layout_marginBottom="20dp"
@@ -61,11 +61,11 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/rounded_edit_text"
                 android:fontFamily="@font/alfa_slab_one"
-                android:hint="User" />
+                android:hint="@string/EditTextHint_User" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
+            android:layout_width="400dp"
             android:layout_height="wrap_content"
             android:textColorHint="#9C27B0">
 
@@ -75,21 +75,43 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/rounded_edit_text"
                 android:fontFamily="@font/alfa_slab_one"
-                android:hint="Senha" />
+                android:hint="@string/EditTextHint_Password" />
         </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/textView_esqueci_senha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/alfa_slab_one"
+            android:text="@string/TextView_EsqueciSenha"
+            android:textColor="#000000" />
 
         <Button
             android:id="@+id/button_login"
-            android:layout_width="match_parent"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="20dp"
             android:backgroundTint="#9C27B0"
             android:fontFamily="@font/alfa_slab_one"
-            android:text="Entrar"
+            android:text="@string/Button_Entrar"
             android:textColor="@color/white"
-            android:textColorLink="#0F071E" />
+            android:textColorLink="#0F071E"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textview_criar_conta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/alfa_slab_one"
+            android:text="@string/TextView_Cadastrar"
+            android:textColor="#000000" />
     </LinearLayout>
 
 </LinearLayout>
