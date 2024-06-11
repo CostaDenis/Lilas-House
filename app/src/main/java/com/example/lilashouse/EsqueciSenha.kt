@@ -11,7 +11,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.FirebaseNetworkException
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
+import com.google.firebase.auth.FirebaseAuthUserCollisionException
 
 class EsqueciSenha : AppCompatActivity() {
 
@@ -32,19 +35,23 @@ class EsqueciSenha : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
 
         ButtonEmail.setOnClickListener {
-            val email = InputEmail.toString()
+            val email = InputEmail.text.toString()
 
             if(email.isEmpty()){
-                val snackbar_Erro = Snackbar.make(it, "Insira seu email!", Snackbar.LENGTH_SHORT)
-                snackbar_Erro.setBackgroundTint(Color.GRAY)
-                snackbar_Erro.show()
+                showSnack(it, "Insira seu email!", Color.GRAY)
             } else {
                 auth.sendPasswordResetEmail(email).addOnCompleteListener(this) { task->
                     if(task.isSuccessful){
-                        val snackbar_Sucesso = Snackbar.make(it, "Insira seu email!", Snackbar.LENGTH_SHORT)
-                        snackbar_Sucesso.setBackgroundTint(Color.GRAY)
-                        snackbar_Sucesso.show()
+                        showSnack(it, "Confira seu email!", Color.GREEN)
                     }
+                } . addOnFailureListener {exception ->
+
+                    val mensagemErro = when(exception){
+                        is FirebaseNetworkException -> "Sem conexão com a Internet!"
+                        is FirebaseAuthInvalidCredentialsException -> "Digite um email válido!"
+                        else -> "Erro ao enviar o email"
+                    }
+                    showSnack(it, mensagemErro, Color.RED)
                 }
             }
         }

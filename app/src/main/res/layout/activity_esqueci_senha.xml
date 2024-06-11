@@ -24,11 +24,11 @@
         android:id="@+id/textView_InsiraEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/alfa_slab_one"
         android:layout_marginTop="180dp"
+        android:fontFamily="@font/alfa_slab_one"
         android:text="@string/TextView_InsiraEmail"
         android:textColor="@color/LilasPrincipal"
-        android:textSize="20sp" />
+        android:textSize="24sp" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"

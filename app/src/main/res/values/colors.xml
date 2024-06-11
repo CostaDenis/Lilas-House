@@ -3,6 +3,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="VerdeBackground">#CCEFA3</color>
+    <color name="VerdeBackground_OP1">#8BC34A</color>
     <color name="LilasPrincipal">#9C27B0</color>
     <color name="VerdeLogin">#3CB371</color>
 </resources>

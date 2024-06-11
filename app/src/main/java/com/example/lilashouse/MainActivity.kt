@@ -3,6 +3,7 @@ package com.example.lilashouse
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -19,6 +20,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var inputPassword: EditText
     private lateinit var loginButton: Button
     private lateinit var abrirEsqueciSenha: TextView
+    private lateinit var abrirCriarConta: TextView
     private lateinit var auth: FirebaseAuth
     private lateinit var firestore: FirebaseFirestore
 
@@ -30,6 +32,7 @@ class MainActivity : AppCompatActivity() {
         inputPassword = findViewById(R.id.input_password)
         loginButton = findViewById(R.id.button_login)
         abrirEsqueciSenha = findViewById(R.id.textView_esqueci_senha)
+        abrirCriarConta = findViewById(R.id.textview_criar_conta)
 
         auth = FirebaseAuth.getInstance()
         firestore = FirebaseFirestore.getInstance()
@@ -42,25 +45,24 @@ class MainActivity : AppCompatActivity() {
             if (username.isNotEmpty() && password.isNotEmpty()) {
                 auth.signInWithEmailAndPassword(username, password)
                     .addOnCompleteListener(this) { task ->
-                        if (task.isSuccessful) {
+                        if (task.isSuccessful && username != "victor@gmail.com") {
                             val backgroundColorLogin = ContextCompat.getColor(this, R.color.VerdeLogin)
-                            val snackbar_Sucesso = Snackbar.make(it, "Login realizado com sucesso", Snackbar.LENGTH_SHORT)
-                            snackbar_Sucesso.setBackgroundTint(backgroundColorLogin)
-                            snackbar_Sucesso.show()
+                            showSnack(it, "Login realizado com sucesso", backgroundColorLogin)
                         } else {
-                            val snackbar_Incorreto = Snackbar.make(it, "Usuário ou senha incorretos", Snackbar.LENGTH_SHORT)
-                            snackbar_Incorreto.setBackgroundTint(Color.GRAY)
-                            snackbar_Incorreto.show()
+                            showSnack(it, "Usuário ou senha incorretos", Color.GRAY)
                         }
                     }
             } else {
-                val snackbar_Erro = Snackbar.make(it, "Por favor, preencha todos os campos", Snackbar.LENGTH_SHORT)
-                snackbar_Erro.setBackgroundTint(Color.RED)
-                snackbar_Erro.show()
+                showSnack(it, "Por favor, preencha todos os campos", Color.RED)
             }
         }
         abrirEsqueciSenha.setOnClickListener {
             val intent = Intent(this, EsqueciSenha::class.java)
+            startActivity(intent)
+        }
+
+        abrirCriarConta.setOnClickListener {
+            val intent = Intent(this, CadastrarConta::class.java)
             startActivity(intent)
         }
 
@@ -71,8 +73,10 @@ class MainActivity : AppCompatActivity() {
         val currentUser = auth.currentUser
         // updateUI(currentUser)
     }
-    private fun showToast(message: String) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+    private fun showSnack(view: View, message: String, color: Int) {
+        val snackbar = Snackbar.make(view, message, Snackbar.LENGTH_SHORT)
+        snackbar.setBackgroundTint(color)
+        snackbar.show()
     }
 
 }

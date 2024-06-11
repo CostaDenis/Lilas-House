@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/VerdeBackground"
+    tools:context=".CadastrarConta">
+
+    <TextView
+        android:id="@+id/textView_Cadastrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/alfa_slab_one"
+        android:text="@string/TextView_Cadastrar"
+        android:textColor="@color/LilasPrincipal"
+        android:textSize="34sp" />
+
+    <TextView
+        android:id="@+id/textView_InsiraNovoEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/alfa_slab_one"
+        android:text="@string/TextView_InsiraEmail"
+        android:textColor="@color/LilasPrincipal"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="10dp"
+        android:textSize="24sp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:textColorHint="@color/LilasPrincipal">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/Input_EmailCad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_edit_text"
+            android:fontFamily="@font/alfa_slab_one"
+            android:hint="@string/EditTextHint_User" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/textView_InsiraNovoNome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/alfa_slab_one"
+        android:text="@string/TextView_InsiraNome"
+        android:textColor="@color/LilasPrincipal"
+        android:layout_marginBottom="10dp"
+        android:textSize="24sp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:textColorHint="@color/LilasPrincipal">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/Input_NomeCad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_edit_text"
+            android:fontFamily="@font/alfa_slab_one"
+            android:hint="@string/EditTextHint_Nome" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/textView_InsiraNovaSenha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/alfa_slab_one"
+        android:text="@string/TextView_InsiraSenha"
+        android:textColor="@color/LilasPrincipal"
+        android:layout_marginBottom="10dp"
+        android:textSize="24sp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:textColorHint="@color/LilasPrincipal">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/Input_SenhaCad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_edit_text"
+            android:fontFamily="@font/alfa_slab_one"
+            android:hint="@string/EditTextHint_Password" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/textView_InsiraSenhaNovamente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/alfa_slab_one"
+        android:text="@string/TextView_ConfirmeSenha"
+        android:textColor="@color/LilasPrincipal"
+        android:layout_marginBottom="10dp"
+        android:textSize="24sp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:textColorHint="@color/LilasPrincipal">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/Input_ConfSenhaCad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_edit_text"
+            android:fontFamily="@font/alfa_slab_one"
+            android:hint="@string/EditTextHint_PasswordAGN" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/LilasPrincipal"
+        android:fontFamily="@font/alfa_slab_one"
+        android:text="@string/Button_CadastrarConta" />
+
+</LinearLayout>
